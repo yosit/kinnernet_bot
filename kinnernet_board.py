@@ -64,14 +64,14 @@ sessions = [
                     "start_time":"2015-07-31 14:30:00",
                     'duration': 60, 
                     "speaker": "TBD",
-                    "title" : "Section I",
+                    "title" : "Solving the venetion mosquitto problem + other fun engineering- workshop",
                     "location" : "Serra"
               },
               {
                     "start_time":"2015-07-31 14:30:00",
                     'duration': 60, 
-                    "speaker": "TBD",
-                    "title" : "Section I",
+                    "speaker": "Liat Segal",
+                    "title" : "ART & TECH SHOWCASE",
                     "location" : "Convivium"
               },
               {
@@ -281,10 +281,10 @@ def handle_request(text):
                                'help', 
                                'Made with geeky kinky love by:',
                                '    Mattan Melamed',
-                               '    Yossi Taguri',
+                               '    Yosi Taguri',
                                '    Roy Ramon'
                                ])
-        if 'help' in text: 
+        if  'help' in text.lower():
             return '\n'.join(['Welcome to kinnernet bot!', 
                                'To use, write: ', 
                                'What now', 
@@ -294,7 +294,7 @@ def handle_request(text):
                                'help', 
                                'Made with geeky kinky love by:',
                                '     Mattan Melamed',
-                               '     Yossi Taguri',
+                               '     Yosi Taguri',
                                '     Roy Ramon'
                                 ])           
 

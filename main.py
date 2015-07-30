@@ -6,9 +6,7 @@ import logging
 
 from google.appengine.api import urlfetch
 
-
 import kinnernet_board
-
 
 bot = telegram.Bot('110060299:AAE5ieuss9qWYXJtCI0OoEVZxy3XT1Jtwws')
 bot.getMe()
@@ -17,10 +15,10 @@ print 'bot set webhook'
 
 
 class DevOpsReactionsBotWebhookPage(webapp2.RequestHandler):
-   def get(self): 
-      logging.info('self is %s', self)         
+    def get(self):
+        logging.info('self is %s', self)
 
-   def post(self):
+    def post(self):
         urlfetch.set_default_fetch_deadline(60)
 
         logging.debug('Request: %s' % self.request.body)
@@ -30,15 +28,13 @@ class DevOpsReactionsBotWebhookPage(webapp2.RequestHandler):
         chat_id = update.message.chat.id
         message = update.message.text
 
-        #if '/start' in message or '/help' in message:
-        bot.sendMessage(chat_id=chat_id,
-                    # text = "you said: " + message + " reply:\n" + kinnernet_board.handle_request(message))
-                    text = kinnernet_board.handle_request(message))
+        # if '/start' in message or '/help' in message:
 
-                    # text = "you said " + message)
-                            # text='Hello! I am DevOpsReactions Bot, I can serve the latest DevOps Reactions post or a random one. What would you like?\n\nYou can control me by sending these commands:\n\n/latest - Latest DevOps Reactions post\n/random - Random DevOps Reactions post')
+        if message is not None:
+            bot.sendMessage(chat_id=chat_id,
+                            text=kinnernet_board.handle_request(message))
 
-        image = None
+        # image = None
         # if '/latest' in message:
         #     image = DevOpsReactions.latest()
         # if '/random' in message:
@@ -59,9 +55,11 @@ app = webapp2.WSGIApplication([
     ('/', DevOpsReactionsBotWebhookPage),
 ], debug=True)
 
+
 def main():
     logging.getLogger().setLevel(logging.DEBUG)
     webapp.util.run_wsgi_app(app)
+
 
 if __name__ == '__main__':
     main()
