@@ -11,7 +11,8 @@ import kinnernet_board
 
 
 bot = telegram.Bot('110060299:AAE5ieuss9qWYXJtCI0OoEVZxy3XT1Jtwws')
-bot.setWebhook('https://bac3ac08.ngrok.io')
+bot.getMe()
+bot.setWebhook('https://kinnernet-bot.appspot.com')
 print 'bot set webhook'
 
 

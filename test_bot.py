@@ -1,9 +1,11 @@
+
 import telegram
+
 bot = telegram.Bot(token='110060299:AAE5ieuss9qWYXJtCI0OoEVZxy3XT1Jtwws')
 print bot.getMe()
 
-rc = bot.setWebhook('https://bac3ac08.ngrok.io')
-print 'setWebhook rc: ' , rc
+rc = bot.setWebhook('https://kinnernet-bot.appspot.com')
+print 'setWebhook rc: '% rc
 
 # updates = bot.getUpdates()
 

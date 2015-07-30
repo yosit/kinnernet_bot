@@ -310,8 +310,9 @@ def handle_request(text):
         else: 
             return 'Say what?!?!'
 
-    except Exception as ex: 
-        return ex.message + '\n' + traceback.format_exc()
+    except Exception as ex:
+        return ex.message
+#        return ex.message + '\n' + traceback.format_exc()
 
 def get_today_events(text):
     if text == "today":
